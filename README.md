@@ -1,24 +1,27 @@
-# README
+# Rails Backend API with JWT authentication with Knock
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This sample backend api project has a single resource `Tweet` and GET route that is protected with JWT authentication
 
-Things you may want to cover:
+## Pre-requisites
 
-* Ruby version
+Create a `.env` file and specify your Auth0 client id and client secret as shown below
 
-* System dependencies
+```
+AUTH0_CLIENT_ID=<YOUR_AUTH0_APP_CLIENT_ID>
+AUTH0_CLIENT_SECRET=<YOUR_AUTH0_APP_CLIENT_SECRET>
+AUTH0_DOMAIN=<YOUR_AUTH0_DOMAIN>
+```
 
-* Configuration
+## Running this sample
 
-* Database creation
+First, install all rails gem dependencies by `cd` into root of this repository and running `bundle install`
 
-* Database initialization
+Note: This sample uses postgres database. Setup your own if needed and adjust the rails configuration accordingly.
 
-* How to run the test suite
+Now, you can run this sample by `rails s`.
+Optionally you can provide `-p` option to specify port such as `rails s -p 3001`
 
-* Services (job queues, cache servers, search engines, etc.)
+## Notes
 
-* Deployment instructions
-
-* ...
+1. This sample uses `rack-cors` gem to allow cross origin calls from any domain. The config for this is in `config/application.rb`.
+2. This sample is tested with rails 5.0.0 and ruby 2.2.2
